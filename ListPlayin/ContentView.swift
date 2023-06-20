@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+   
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                NavigationLink("Flat list") {
+                    FlatListView()
+                }
+                NavigationLink("Async flat list") {
+                    AsyncFlatListView()
+                }
+                NavigationLink("Selection list") {
+                    SelectionListView()
+                }
+                NavigationLink("Append cell list") {
+                    AppendCellListView()
+                }
+                NavigationLink("Static tree list") {
+                    StaticTreeListView()
+                }
+                NavigationLink("Disclosure group list") {
+                    DisclosureGroupListView()
+                }
+                NavigationLink("Async disclosure group") {
+                    AsyncDisclosureGroupListView()
+                }
+            }.navigationTitle("Lists")
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
